@@ -18,10 +18,8 @@ public class MovePaddle : MonoBehaviour
             //get touch position x
             Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
-            Debug.Log(touchPosition.x);
-            Vector2 paddlePos = new Vector2(transform.position.x, transform.position.y);
+            Vector2 paddlePos = new Vector2(Mathf.Clamp(transform.position.x, 0.7f, 6.1f), transform.position.y);
             
-
             if(paddlePos.x < touchPosition.x)
             {
                 paddlePos.x++;
